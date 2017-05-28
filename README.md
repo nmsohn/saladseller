@@ -1,2 +1,3 @@
 # saladseller
-MVC2 를 기반으로 한 쇼핑몰 제작
+![logo](https://www.dropbox.com/s/022cparay8oivzg/logo.png?dl=0)
+A web-based shopping website by using the JSP Model 2 architecture
