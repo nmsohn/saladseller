@@ -49,6 +49,9 @@ public class MemberServlet extends HttpServlet {
 
 			req.getRequestDispatcher("loginForm.jsp").forward(req, resp);
 
+		} else if (reqURI.equals(contextPath + "/index.do")) {
+			req.getRequestDispatcher("index.jsp").forward(req, resp);
+
 		} else if (reqURI.equals(contextPath + "/login.do")) {
 			// 여기서는 로그인 처리 할거에요
 			// 로그인 처리라는 로직이 필요함...>>>service에 등록할거에요
@@ -57,7 +60,6 @@ public class MemberServlet extends HttpServlet {
 
 			if (memberService.login(id, pw)) {
 				// 로그인 성공!!
-				req.setAttribute("msg", "로그인 성공!!");
 				// session에다가 id 담을거임ㅇㅇ
 				req.getSession().setAttribute("id", id);
 
@@ -71,6 +73,10 @@ public class MemberServlet extends HttpServlet {
 			// loginResult포워딩...
 		} else if (reqURI.equals(contextPath + "/joinForm.do")) {
 			req.getRequestDispatcher("joinForm.jsp").forward(req, resp);
+
+		} else if (reqURI.equals(contextPath + "/logout.do")) {
+			req.getRequestDispatcher("logoutResult.jsp").forward(req, resp);
+
 		} else if (reqURI.equals(contextPath + "/join.do")) {
 			// 파라미터로 넘겨받은 정보를 기준으로 회원가입을 진행...
 			// 회원가입 로직은 Service 클래스를 이용하여 구현
@@ -81,7 +87,7 @@ public class MemberServlet extends HttpServlet {
 			String email = req.getParameter("email");
 			String addr = req.getParameter("addr");
 			String phone = req.getParameter("phone");
-			
+
 			boolean result = memberService.join(id, pw, email, addr, phone);
 			// 회원가입이 성공하면 result : true, 실패하면 false
 
@@ -153,6 +159,8 @@ public class MemberServlet extends HttpServlet {
 			// loginForm.do 로 리다이렉트
 			req.getSession().removeAttribute("id");
 			resp.sendRedirect("loginForm.do");
+		} else if (reqURI.equals(contextPath + "/contact.do")) {
+			// 처리
 		}
 	}
 

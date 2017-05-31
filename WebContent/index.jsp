@@ -1,4 +1,10 @@
-<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -71,7 +77,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 col-xs-2">
-					<div id="fh5co-logo"><a href="index.html"><img src="images/logo_small_2.png" width="64" height="64" alt="logo"></a></div>
+					<div id="fh5co-logo"><a href="index.jsp"><img src="images/logo_small_2.png" width="64" height="64" alt="logo"></a></div>
 				</div>
 				<div class="col-md-6 col-xs-6 text-center menu-1">
 					<ul>
@@ -105,10 +111,13 @@
 						    </div>
 						</li>
 						<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
-						<li class="sign-in"><a href="#" class="signin"><span><button type="button" class="btn btn-success btn-sm">Sign in</button></span></a></li>
-						<!-- <li class="sign-up"><a href="#" class="signup"></a></li>
-						<li class="sign-in"><a href="#" class="signin" alt="signin"><span><i class="icon-login"></i></span></a></li>
-						<li class="sign-out"><a href="#" class="signout"><span><i class="icon-logout"></i></span></a></li> -->
+						<li class="sign-up"><a href="#" class="signup"></a></li>
+			<%if(session.getAttribute("id")==null) {%>
+						<li class="sign-in"><a href="loginForm.jsp" class="signin"><span><i class="icon-login"></i></span></a></li>
+			<%} else{%>
+						<li class="sign-in"><%=session.getAttribute("id")%>님이 로그인 했습니다.<a href="logout.do" class="signin"><span><i class="icon-login"></i></span></a></li>
+			<%}%>
+						
 					</ul>
 				</div>
 			</div>
@@ -233,6 +242,7 @@
 								<p>
 									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
 									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									<a href="single.html" class="icon"><i class="icon-login"></i></a>
 								</p>
 							</div>
 						</div>
