@@ -417,7 +417,7 @@
 								<span class="counter js-counter" data-from="0" data-to="450" data-speed="5000" data-refresh-interval="50">1</span>
 								<span class="counter-label">Happy Clients</span>
 							</div>
-						</div>
+						</div>dd
 						<div class="col-md-3 col-sm-6 animate-box">
 							<div class="feature-center">
 								<span class="icon">
