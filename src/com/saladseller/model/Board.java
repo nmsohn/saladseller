@@ -11,7 +11,6 @@ public class Board {
     private String content;
     private Date genDate;
     private int viewCount;
-    private int m_id;
     private String imgPath;
 
     public int getB_id() {
@@ -52,14 +51,6 @@ public class Board {
 
     public void setViewCount(int viewCount) {
         this.viewCount = viewCount;
-    }
-
-    public int getM_id() {
-        return m_id;
-    }
-
-    public void setM_id(int m_id) {
-        this.m_id = m_id;
     }
 
     public String getImgPath() {
