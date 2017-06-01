@@ -24,19 +24,13 @@ public class MemberService {
 
 	public boolean login(String id, String pw) {
 		boolean result = false;
-		// 해당 id로 db에 접근해서....레코드를 조회 합니다.
 		Member member = memberDao.selectOne(id);
 
 		if (member == null) {
-			// 아이디가 없음..
-			result = false; // 로그인 실패
+			result = false;
 		} else {
-			// 아이디는 있음 ㅇㅇ 오~~
-			// dao가 가져온 비밀번호랑 입력받은 비밀번호 비교~
 			String originPw = member.getM_pw();
 			if (originPw.equals(pw)) {
-				// 비밀번호 똑같음 오~~
-				// 로그인 성공
 				result = true;
 			}
 		}

@@ -58,16 +58,14 @@ public class MemberServlet extends HttpServlet {
 			String pw = req.getParameter("pw");
 
 			if (memberService.login(id, pw)) {
-				// 로그인 성공!!
-				// session에다가 id 담을거임ㅇㅇ
 				req.getSession().setAttribute("id", id);
+				req.setAttribute("result", true);
+				req.getRequestDispatcher("loginResult.jsp").forward(req, resp);
 
 			} else {
-				req.setAttribute("msg", "로그인 실패ㅜㅜ");
-				// 로그인 실패!!
+				req.setAttribute("result", false);
+				req.getRequestDispatcher("loginResult.jsp").forward(req, resp);
 			}
-
-			req.getRequestDispatcher("loginResult.jsp").forward(req, resp);
 
 			// loginResult포워딩...
 		} else if (reqURI.equals(contextPath + "/joinForm.do")) {
@@ -160,8 +158,8 @@ public class MemberServlet extends HttpServlet {
 			resp.sendRedirect("loginForm.do");
 		} else if (reqURI.equals(contextPath + "/addForm.do")) {
 			req.getRequestDispatcher("addForm.jsp").forward(req, resp);
-		} 
-		
+		}
+
 	}
 
 }
