@@ -46,7 +46,6 @@ public class MemberServlet extends HttpServlet {
 		String reqURI = req.getRequestURI();
 
 		if (reqURI.equals(contextPath + "/loginForm.do")) {
-
 			req.getRequestDispatcher("loginForm.jsp").forward(req, resp);
 
 		} else if (reqURI.equals(contextPath + "/index.do")) {
@@ -159,9 +158,10 @@ public class MemberServlet extends HttpServlet {
 			// loginForm.do 로 리다이렉트
 			req.getSession().removeAttribute("id");
 			resp.sendRedirect("loginForm.do");
-		} else if (reqURI.equals(contextPath + "/contact.do")) {
-			// 처리
-		}
+		} else if (reqURI.equals(contextPath + "/addForm.do")) {
+			req.getRequestDispatcher("addForm.jsp").forward(req, resp);
+		} 
+		
 	}
 
 }
