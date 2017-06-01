@@ -106,10 +106,25 @@ public class CategoryDaoImpl implements CategoryDao{
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "select * from category";
+        String sql = "select * from category where c_id=?";
         Category cat = new Category();
 
-        return null;
+        try{
+            conn = ConnectionProvider.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,c_id);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                int id = rs.getInt("c_id");
+                String name = rs.getString("c_name");
+                String desc = rs.getString("c_desc");
+                cat = new Category(id,name,desc);
+            }
+        }finally {
+            ConnectionCloser.close(conn,ps,rs);
+        }
+
+        return cat;
     }
 
 }
