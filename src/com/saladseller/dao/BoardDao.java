@@ -12,9 +12,10 @@ public interface BoardDao {
     public int selectCount() throws Exception;
     public int selectCount(HashMap<String,Object> map);
     public List<Board> selectList(int firstRow, int endRow) throws Exception;
-    public int insert(Board boardVO) throws Exception;
+    public List<Board> selectList(int firstRow, int endRow, int cat) throws Exception;
+    public boolean insert(Board b) throws Exception;
     public Board selectOne(int boardNumber) throws Exception;
-    public void increaseReadCount(int boardNumber) throws Exception;
-    public int update(Board boardVO) throws Exception;
-    public int delete(int boardNumber) throws Exception;
+    public void increaseViewCount(int boardNumber) throws Exception;
+    public boolean update(Board b) throws Exception;
+    public boolean delete(int boardNumber) throws Exception;
 }
