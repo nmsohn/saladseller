@@ -91,9 +91,7 @@
 								<li><a href="product3.jsp">디저트</a></li>
 							</ul>
 						</li>
-						
-
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="contact.jsp">Contact</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
