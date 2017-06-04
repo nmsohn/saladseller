@@ -7,7 +7,8 @@ public class Product {
 	private String category;
 	private String descripttion;
 	private int price;
-	private int p_num;
+	private int quantity;
+	private String imgPath;
 	
 	
 	public int getP_id() {
@@ -49,24 +50,21 @@ public class Product {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
-	public int getP_num() {
-		return p_num;
-	}
-	
-	public void setP_num(int p_num) {
-		this.p_num = p_num;
+
+	public int getQuantity() {
+		return quantity;
 	}
 
-	@Override
-	public String toString() {
-		return "Product{" +
-				"p_id=" + p_id +
-				", p_name='" + p_name + '\'' +
-				", category='" + category + '\'' +
-				", descripttion='" + descripttion + '\'' +
-				", price=" + price +
-				", p_num=" + p_num +
-				'}';
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
+
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
+	}
+
 }

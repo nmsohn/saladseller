@@ -120,7 +120,7 @@ public class BoardDaoImpl implements BoardDao{
     public boolean insert(Board b) throws Exception {
         Connection conn = null;
         PreparedStatement ps = null;
-        String sql = "insert into Board (title, content, genDate, viewCount, spec, imgPath, cat_id) "+
+        String sql = "insert into board (title, content, genDate, viewCount, spec, imgPath, cat_id) "+
             "values(?,?,?,?,?,?,?)";
         boolean ok = false;
         try{
