@@ -4,10 +4,11 @@ public class Product {
 
 	private int p_id;
 	private String p_name;
-	private String cat_id;
-	private String descript;
+	private String category;
+	private String descripttion;
 	private int price;
-	private int p_num;
+	private int quantity;
+	private String imgPath;
 	
 	
 	public int getP_id() {
@@ -25,23 +26,23 @@ public class Product {
 	public void setP_name(String p_name) {
 		this.p_name = p_name;
 	}
-	
-	public String getCat_id() {
-		return cat_id;
+
+	public String getCategory() {
+		return category;
 	}
-	
-	public void setCat_id(String cat_id) {
-		this.cat_id = cat_id;
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
-	
-	public String getDescript() {
-		return descript;
+
+	public String getDescripttion() {
+		return descripttion;
 	}
-	
-	public void setDescript(String descript) {
-		this.descript = descript;
+
+	public void setDescripttion(String descripttion) {
+		this.descripttion = descripttion;
 	}
-	
+
 	public int getPrice() {
 		return price;
 	}
@@ -49,21 +50,21 @@ public class Product {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
-	public int getP_num() {
-		return p_num;
-	}
-	
-	public void setP_num(int p_num) {
-		this.p_num = p_num;
+
+	public int getQuantity() {
+		return quantity;
 	}
 
-	
-	@Override
-	public String toString() {
-		return "Product [p_id = " + p_id + ", p_name = " + p_name + ", cat_id = " + cat_id + ", descript = " + descript
-				+ ", price = " + price + ", p_num = " + p_num + "]";
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
-	
-	
+
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
+	}
+
 }

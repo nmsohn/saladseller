@@ -4,7 +4,7 @@ import com.saladseller.model.Product;
 import java.util.List;
 
 /**
- * Created by 5CLASS-184 on 2017-06-02.
+ * Created by nmsohn on 2017-06-02.
  */
 public interface ProductDao {
     public int countForUser(String m_id )  throws Exception;
