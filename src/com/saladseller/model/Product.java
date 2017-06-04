@@ -4,8 +4,8 @@ public class Product {
 
 	private int p_id;
 	private String p_name;
-	private String cat_id;
-	private String descript;
+	private String category;
+	private String descripttion;
 	private int price;
 	private int p_num;
 	
@@ -25,23 +25,23 @@ public class Product {
 	public void setP_name(String p_name) {
 		this.p_name = p_name;
 	}
-	
-	public String getCat_id() {
-		return cat_id;
+
+	public String getCategory() {
+		return category;
 	}
-	
-	public void setCat_id(String cat_id) {
-		this.cat_id = cat_id;
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
-	
-	public String getDescript() {
-		return descript;
+
+	public String getDescripttion() {
+		return descripttion;
 	}
-	
-	public void setDescript(String descript) {
-		this.descript = descript;
+
+	public void setDescripttion(String descripttion) {
+		this.descripttion = descripttion;
 	}
-	
+
 	public int getPrice() {
 		return price;
 	}
@@ -58,12 +58,15 @@ public class Product {
 		this.p_num = p_num;
 	}
 
-	
 	@Override
 	public String toString() {
-		return "Product [p_id = " + p_id + ", p_name = " + p_name + ", cat_id = " + cat_id + ", descript = " + descript
-				+ ", price = " + price + ", p_num = " + p_num + "]";
+		return "Product{" +
+				"p_id=" + p_id +
+				", p_name='" + p_name + '\'' +
+				", category='" + category + '\'' +
+				", descripttion='" + descripttion + '\'' +
+				", price=" + price +
+				", p_num=" + p_num +
+				'}';
 	}
-	
-	
 }

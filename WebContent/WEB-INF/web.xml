@@ -9,13 +9,20 @@
   
   <!-- 우리가 만든 서블릿을 등록 -->
   <servlet>
-   	<servlet-name>memberServlet</servlet-name>
-  	<servlet-class>com.saladseller.servlet.MemberServlet</servlet-class>
-  </servlet>
-  <servlet>
-      <servlet-name>boardServlet</servlet-name>
-      <servlet-class>com.saladseller.servlet.BoardServlet</servlet-class>
-  </servlet>
+    <servlet-name>memberServlet</servlet-name>
+    <servlet-class>com.saladseller.servlet.MemberServlet</servlet-class>
+</servlet>
+
+    <servlet>
+        <servlet-name>boardServlet</servlet-name>
+        <servlet-class>com.saladseller.servlet.BoardServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>commentServlet</servlet-name>
+        <servlet-class>com.saladseller.servlet.CommentServlet</servlet-class>
+    </servlet>
+
   <!-- 등록한 서블릿이처리할 url을 명시 
   	~~~~~~~~.do로 끝나는 요청이 있으면 memberServlet이 
   	처리하겠다
@@ -24,9 +31,12 @@
   	<servlet-name>memberServlet</servlet-name>
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>boardServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>commentServlet</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
   
