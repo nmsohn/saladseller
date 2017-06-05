@@ -40,7 +40,7 @@ public class ProductDaoImpl implements ProductDao{
             ps = conn.prepareStatement(sql);
             ps.setString(1,p.getP_name());
             ps.setString(2,p.getCategory());
-            ps.setString(3,p.getDescripttion());
+            ps.setString(3,p.getDescription());
             ps.setDouble(4,p.getPrice());
             ps.setInt(5,p.getQuantity());
             ps.setString(6,p.getImgPath());
@@ -66,7 +66,7 @@ public class ProductDaoImpl implements ProductDao{
             ps = conn.prepareStatement(sql);
             ps.setString(1,p.getP_name());
             ps.setString(2,p.getCategory());
-            ps.setString(3,p.getDescripttion());
+            ps.setString(3,p.getDescription());
             ps.setDouble(4,p.getPrice());
             ps.setInt(5,p.getQuantity());
             ps.setString(6,p.getImgPath());
@@ -113,7 +113,7 @@ public class ProductDaoImpl implements ProductDao{
     }
 
     @Override
-    public List<Product> findByCategory(int c_id) throws Exception {
+    public List<Product> findByCategory(String category)  {
         return null;
     }
 

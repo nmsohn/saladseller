@@ -1,116 +1,4 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Shop &mdash; Free Website Template, Free HTML5 Template by gettemplates.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="gettemplates.co" />
-
-	<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-xs-2">
-					<div id="fh5co-logo"><a href="index.html">Shop.</a></div>
-				</div>
-				<div class="col-md-6 col-xs-6 text-center menu-1">
-					<ul>
-						<li class="has-dropdown">
-							<a href="product.html">Shop</a>
-							<ul class="dropdown">
-								<li><a href="single.html">Single Shop</a></li>
-							</ul>
-						</li>
-						<li><a href="about.html">About</a></li>
-						<li class="has-dropdown">
-							<a href="services.html">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">eCommerce</a></li>
-								<li><a href="#">Branding</a></li>
-								<li><a href="#">API</a></li>
-							</ul>
-						</li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
-					<ul>
-						<li class="search">
-							<div class="input-group">
-						      <input type="text" placeholder="Search..">
-						      <span class="input-group-btn">
-						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
-						      </span>
-						    </div>
-						</li>
-						<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
+<%@ include file="/layout/header.jsp" %>
 
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_2.jpg);">
 		<div class="overlay"></div>
@@ -133,50 +21,119 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<span>Cool Stuff</span>
-					<h2>Products.</h2>
+					<h2>${Category.name}</h2>
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
 			</div>
+
+<c:forEach items="${product}" var="product" >
 			<div class="row">
 				<div class="col-md-4 text-center animate-box">
 					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-1.jpg);">
+						<div class="product-grid" style="background-image:url(<c:url value="/images/${product.imagePath}" />);">
 							<div class="inner">
 								<p>
-									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+									<a href="single.html" class="icon" ng-click="addToCart('${product.p_id}')" data-toggle="modal"><i class="icon-shopping-cart"></i></a>
 									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
 								</p>
 							</div>
 						</div>
+
+
 						<div class="desc">
-							<h3><a href="single.html">Hauteville Concrete Rocking Chair</a></h3>
-							<span class="price">$350</span>
+							<input type="hidden" value="${productID}" name="id">
+							<h3><a href="detail.jsp">${product.name}</a></h3>
+							<span class="price">${product.price}</span>
 						</div>
 					</div>
 				</div>
-				
-		<!-- <div id="fh5co-contact">
-			<div class="container">
-				<div class="col-md-6 animate-box">
-					<h3>login</h3>
-					<form action="login.do">
-						<div class="row form-group">
-							<div class="col-md-6">
-								<input type="text" name="id" class="form-control"
-									placeholder="id"> 
-								<input type="password" name="pw"
-									class="form-control" placeholder="password">
-							</div>
+
+				</c:forEach>
+
+				//prompt modal
+
+				<div id="themodal" class="modal hide fade">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+						<h3>Add Item to the Cart</h3>
+					</div>
+
+					<div class="modal-body">
+						<c:choose>
+							<c:when test="${f:checkProductInCart(pageContext)}">
+								<p class="text-warning">Product - ${product.name} is
+									already added to your Shopping Cart.</p>
+							</c:when>
+							<c:otherwise>
+								<p class="text-success">Product - ${product.name} will
+									be added to your Shopping Cart.</p>
+							</c:otherwise>
+						</c:choose>
+
+						<hr />
+						<div>
+							<table class="table table-condensed">
+								<thead>
+								<tr>
+									<td>Product</td>
+									<td>Quantity</td>
+									<td>Price</td>
+								</tr>
+								</thead>
+								<tbody>
+								<tr class="active">
+									<td><img src="images/small/${productID}.jpg" /></td>
+									<td><input class="input-mini" type="text" placeholder="1"></td>
+									<td class="price">${product.productPrice}</td>
+								</tr>
+								</tbody>
+							</table>
 						</div>
 
-						<div class="form-group">
-							<input type="submit" value="Login" class="btn btn-primary">
-							<input type="button" value="Join" class="btn btn-primary" onclick="location.href='joinForm.do'">
+						<div class="modal-footer">
+							<form method="post" action="addProducts" class="addCartForm">
+								<c:choose>
+									<c:when test="${f:checkProductInCart(pageContext)}">
+										<button class="btn btn-primary pull-left" id="disabledbutton"
+												onload="disableButton">In Cart!</button>
+									</c:when>
+									<c:otherwise>
+										<button class="btn btn-primary pull-left" id="addtocart">Add
+											to Cart</button>
+									</c:otherwise>
+								</c:choose>
+
+								<a href="#" class="btn" data-dismiss="modal">Continue
+									Shopping</a> <a id="yesbutton" href="#" class="btn btn-primary">Place
+								Order</a>
+							</form>
 						</div>
-					</form>
+					</div>
 				</div>
-			</div>
-		</div> -->
+
+				<!-- <div id="fh5co-contact">
+                    <div class="container">
+                        <div class="col-md-6 animate-box">
+                            <h3>login</h3>
+                            <form action="login.do">
+                                <div class="row form-group">
+                                    <div class="col-md-6">
+                                        <input type="text" name="id" class="form-control"
+                                            placeholder="id">
+                                        <input type="password" name="pw"
+                                            class="form-control" placeholder="password">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Login" class="btn btn-primary">
+                                    <input type="button" value="Join" class="btn btn-primary" onclick="location.href='joinForm.do'">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> -->
 				<div class="col-md-4 text-center animate-box">
 					<div class="product">
 						<div class="product-grid" style="background-image:url(images/product-2.jpg);">
@@ -193,6 +150,8 @@
 						</div>
 					</div>
 				</div>
+
+
 				<div class="col-md-4 text-center animate-box">
 					<div class="product">
 						<div class="product-grid" style="background-image:url(images/product-3.jpg);">

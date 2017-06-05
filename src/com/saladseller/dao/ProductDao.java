@@ -13,7 +13,7 @@ public interface ProductDao {
     public boolean deleteProduct(int p_id)  throws Exception;
     public Product findOne(int p_id)  throws Exception;
     public List<Product> findAll(int firstRow, int endRow)  throws Exception;
-    public List<Product> findByCategory(int c_id)  throws Exception;
+    public List<Product> findByCategory(String category) ;
     public void productCount(int b_num) throws Exception;
     public void decreaseCount(int b_num) throws Exception;
 
