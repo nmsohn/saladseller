@@ -17,14 +17,13 @@ public class CategoryDaoImpl implements CategoryDao{
     public boolean addCategory(Category c) throws SQLException, ClassNotFoundException{
         Connection conn = null;
         PreparedStatement ps =null;
-        String sql = "insert into category value(?,?,?)";
+        String sql = "insert into category value(?,?)";
         boolean ok = false;
         try {
             conn = ConnectionProvider.getConnection();
             ps = conn.prepareStatement(sql);
-            ps.setInt(1, c.getCat_id());
-            ps.setString(2, c.getCat_name());
-            ps.setString(3,c.getCat_desc());
+            ps.setInt(1, c.getC_id());
+            ps.setString(2, c.getC_name());
             int i = ps.executeUpdate();
             if(i>0){
                 ok=true;
@@ -41,14 +40,13 @@ public class CategoryDaoImpl implements CategoryDao{
         boolean ok = false;
         Connection conn = null;
         PreparedStatement ps =null;
-        String sql = "update category set c_name =?, c_desc=? where c_id=? ";
+        String sql = "update category set c_name =?where c_id=? ";
         try {
 
             conn = ConnectionProvider.getConnection();
             ps = conn.prepareStatement(sql);
-            ps.setString(1, c.getCat_name());
-            ps.setString(2,c.getCat_desc());
-            ps.setInt(3, c.getCat_id());
+            ps.setString(1, c.getC_name());
+            ps.setInt(2, c.getC_id());
             int i = ps.executeUpdate();
             if(i>0){
                 ok=true;
@@ -92,8 +90,7 @@ public class CategoryDaoImpl implements CategoryDao{
             while(rs.next()){
                 int id = rs.getInt("c_id");
                 String name = rs.getString("c_name");
-                String desc = rs.getString("c_desc");
-                list.add(new Category(id,name,desc));
+                list.add(new Category(id,name));
             }
         }finally {
             ConnectionCloser.close(conn,ps,rs);
@@ -117,8 +114,7 @@ public class CategoryDaoImpl implements CategoryDao{
             if(rs.next()){
                 int id = rs.getInt("c_id");
                 String name = rs.getString("c_name");
-                String desc = rs.getString("c_desc");
-                cat = new Category(id,name,desc);
+                cat = new Category(id,name);
             }
         }finally {
             ConnectionCloser.close(conn,ps,rs);

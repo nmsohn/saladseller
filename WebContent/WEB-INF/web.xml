@@ -12,6 +12,10 @@
     <servlet-name>memberServlet</servlet-name>
     <servlet-class>com.saladseller.servlet.MemberServlet</servlet-class>
 </servlet>
+  <servlet>
+    <servlet-name>commentServlet</servlet-name>
+    <servlet-class>com.saladseller.servlet.CommentServlet</servlet-class>
+</servlet>
     <servlet>
         <servlet-name>productServlet</servlet-name>
         <servlet-class>com.saladseller.servlet.ProductServlet</servlet-class>
@@ -25,9 +29,22 @@
   	<servlet-name>memberServlet</servlet-name>
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
+    <servlet-mapping>
+  	<servlet-name>commentServlet</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
 
     <servlet-mapping>
-        <servlet-name>memberServlet</servlet-name>
+        <servlet-name>productServlet</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
+    
+    <jsp-config> 
+        <taglib> 
+               <taglib-uri>customTags</taglib-uri> 
+               <taglib-location>/WEB-INF/tld/CustomTags.tld</taglib-location> 
+        </taglib> 
+</jsp-config>
+    
 </web-app>

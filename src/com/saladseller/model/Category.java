@@ -2,40 +2,30 @@ package com.saladseller.model;
 
 public class Category {
 	
-	private int cat_id;
-	private String cat_name;
-	private String cat_desc;
+	private int c_id;
+	private String c_name;
 	
-	
-	public int getCat_id() {
-		return cat_id;
+	public Category(){
+		
 	}
-	
-	public void setCat_id(int cat_id) {
-		this.cat_id = cat_id;
+	public Category(int c_id, String c_name)
+	{
+		this.c_id = c_id;
+		this.c_name = c_name;
 	}
-	
-	public String getCat_name() {
-		return cat_name;
+	public int getC_id() {
+		return c_id;
 	}
-	
-	public void setCat_name(String cat_name) {
-		this.cat_name = cat_name;
+	public void setC_id(int c_id) {
+		this.c_id = c_id;
 	}
-	
-	public String getCat_desc() {
-		return cat_desc;
+	public String getC_name() {
+		return c_name;
 	}
-	
-	public void setCat_desc(String cat_desc) {
-		this.cat_desc = cat_desc;
+	public void setC_name(String c_name) {
+		this.c_name = c_name;
 	}
 
-	
-	@Override
-	public String toString() {
-		return "Category [cat_id = " + cat_id + ", cat_name = " + cat_name + ", cat_desc = " + cat_desc + "]";
-	}
 	
 	
 }

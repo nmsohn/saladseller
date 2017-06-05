@@ -92,7 +92,7 @@
 						</div>
 
 						<div class="modal-footer">
-							<form method="post" action="addProducts" class="addCartForm">
+							<form method="post" action="addProduct" class="addCartForm">
 								<c:choose>
 									<c:when test="${f:checkProductInCart(pageContext)}">
 										<button class="btn btn-primary pull-left" id="disabledbutton"

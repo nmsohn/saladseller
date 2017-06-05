@@ -8,7 +8,7 @@ public class Product {
 	private String description;
 	private int price;
 	private int quantity;
-	private String imgBoard;
+	private String imgPath;
 	
 	
 	public int getP_id() {
@@ -59,11 +59,11 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public String getImgBoard() {
-		return imgBoard;
+	public String getImgPath() {
+		return imgPath;
 	}
 
-	public void setImgBoard(String imgBoard) {
-		this.imgBoard = imgBoard;
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
 	}
 }
