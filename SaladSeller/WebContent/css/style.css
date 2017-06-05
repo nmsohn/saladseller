@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style
+* 	Template Style 
 *
 * ======================================================= */
 body {
@@ -47,8 +47,8 @@ body {
 }
 
 a {
-
-
+	
+	
   color: #88c440;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav .menu-2 li.shopping-cart {
   float: right;
 }
-.fh5co-nav .menu-2 li a.cart li {
+.fh5co-nav .menu-2 li a.cart {
   color: black;
 }
 .fh5co-nav .menu-2 li a.cart span {
@@ -176,13 +176,6 @@ h1, h2, h3, h4, h5, h6, figure {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
-.fh5co-nav .menu-2 li.sign-in {
-  float: right;
-}
-.fh5co-nav .menu-2 li a.signin span {
-  position: relative;
-}
-
 .fh5co-nav ul {
   padding: 0;
   margin: 0;
