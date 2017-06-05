@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDLFEfChTKIlyHd33POCapQbAEE753NizE">
+</script>
+
+
+ 
+<script>
+var map;
+function initialize()
+{
+  var mapProp = {
+    center: new google.maps.LatLng(37.570539, 126.985255),
+    zoom:15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    
+  };
+
+  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+  var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+  var icons = {
+    parking: {
+      icon: iconBase + 'parking_lot_maps.png'
+    },
+    library: {
+      icon: iconBase + 'library_maps.png'
+    },
+    info: {
+      icon: iconBase + 'info-i_maps.png'
+    }
+  };
+
+  function addMarker(feature) {
+    var marker = new google.maps.Marker({
+      position: feature.position,
+      icon: icons[feature.type].icon,
+      map: map
+    });
+  }
+
+  var features = [
+    {
+      position: new google.maps.LatLng(37.570539, 126.985255),
+      type: 'info'
+    }
+  ];
+
+  for (var i = 0, feature; feature = features[i]; i++) {
+    addMarker(feature);
+  }
+}
+
+
+ 
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+ 
+<body>
+<div id="googleMap" style="width:400px;height:300px;"></div>
+
+</body>
+</html>
+ 

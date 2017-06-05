@@ -20,6 +20,5 @@
   <servlet-mapping>
   	<servlet-name>memberServlet</servlet-name>
   	<url-pattern>*.do</url-pattern>
-  </servlet-mapping>
-  
+  </servlet-mapping>  
 </web-app>

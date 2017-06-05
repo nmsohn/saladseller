@@ -81,23 +81,17 @@
 				</div>
 				<div class="col-md-6 col-xs-6 text-center menu-1">
 					<ul>
+					<li><a href="about.html">About</a></li>
+					<li><a href="services.html">Services</a></li>
 						<li class="has-dropdown">
-							<a href="product.html">Shop</a>
+							<a href="product1.jsp">Shop</a>
 							<ul class="dropdown">
-								<li><a href="single.html">Single Shop</a></li>
+								<li><a href="product1.jsp">신선식품</a></li>
+								<li><a href="product2.jsp">가공식품</a></li>
+								<li><a href="product3.jsp">디저트</a></li>
 							</ul>
 						</li>
-						<li><a href="about.html">About</a></li>
-						<li class="has-dropdown">
-							<a href="services.html">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">eCommerce</a></li>
-								<li><a href="#">Branding</a></li>
-								<li><a href="#">API</a></li>
-							</ul>
-						</li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="contact.jsp">Contact</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
@@ -417,7 +411,7 @@
 								<span class="counter js-counter" data-from="0" data-to="450" data-speed="5000" data-refresh-interval="50">1</span>
 								<span class="counter-label">Happy Clients</span>
 							</div>
-						</div>dd
+						</div>
 						<div class="col-md-3 col-sm-6 animate-box">
 							<div class="feature-center">
 								<span class="icon">

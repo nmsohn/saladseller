@@ -126,8 +126,7 @@
 						<div class="row form-group">
 							<div class="col-md-6">
 								<input type="text" name="id" class="form-control"
-									placeholder="id"> 
-								<input type="password" name="pw"
+									placeholder="id"> <input type="password" name="pw"
 									class="form-control" placeholder="password">
 							</div>
 						</div>
