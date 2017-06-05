@@ -41,7 +41,7 @@
 
 
 						<div class="desc">
-							<input type="hidden" value="${productID}" name="id">
+							<input type="hidden" value="${p_id}" name="id">
 							<h3><a href="detail.jsp">${product.name}</a></h3>
 							<span class="price">${product.price}</span>
 						</div>
@@ -83,9 +83,9 @@
 								</thead>
 								<tbody>
 								<tr class="active">
-									<td><img src="images/small/${productID}.jpg" /></td>
+									<td><img src="images/small/${p_id}.jpg" /></td>
 									<td><input class="input-mini" type="text" placeholder="1"></td>
-									<td class="price">${product.productPrice}</td>
+									<td class="price">${product.price}</td>
 								</tr>
 								</tbody>
 							</table>
