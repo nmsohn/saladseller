@@ -118,7 +118,7 @@
 		</nav>
 
 
-		<div id="fh5co-contact">
+<div id="fh5co-contact">
 			<div class="container">
 				<div class="col-md-6 animate-box">
 					<h3>Join</h3>

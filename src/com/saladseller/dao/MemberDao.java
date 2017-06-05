@@ -15,9 +15,9 @@ public class MemberDao {
 	private static MemberDao instance;
 
 	private Connection connection;
-	private static String URL = "jdbc:mysql://localhost:3306/spring";
+	private static String URL = "jdbc:mysql://localhost:3306/shopdb";
 	private static String USERNAME = "root";
-	private static String PASSWORD = "lovely9251";
+	private static String PASSWORD = "wldus1004#";
 
 	public static MemberDao getInstance() {
 		if (instance == null) {
