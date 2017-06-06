@@ -84,7 +84,7 @@
 								</thead>
 								<tbody>
 								<tr class="active">
-									<td><img src="images/small/${p_id}.jpg" /></td>
+									<td><img src="images/${product.imagePath}.jpg" /></td>
 									<td><input class="input-mini" type="text" placeholder="1"></td>
 									<td class="price">${product.price}</td>
 								</tr>
