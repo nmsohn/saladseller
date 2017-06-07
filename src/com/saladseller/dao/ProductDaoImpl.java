@@ -93,43 +93,37 @@ public class ProductDaoImpl implements ProductDao {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-            return ok;
-        }
-
-
-        @Override
-        public boolean deleteProduct(int p_id){
-            boolean ok = false;
-            Connection conn = null;
-            PreparedStatement ps = null;
-            String sql = "delete * from product where p_id=?";
+            
+        }   
+        return ok;
+    }
+    @Override
+    public boolean deleteProduct(int p_id){
+        boolean ok = false;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        String sql = "delete * from product where p_id=?";
+        try {
+            conn = ConnectionProvider.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, p_id);
+            int i = ps.executeUpdate();
+            if (i > 0) {
+                ok = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
             try {
-                conn = ConnectionProvider.getConnection();
-                ps = conn.prepareStatement(sql);
-                ps.setInt(1, p_id);
-                int i = ps.executeUpdate();
-                if (i > 0) {
-                    ok = true;
-                }
+                ConnectionCloser.close(conn, ps);
             } catch (Exception e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    ConnectionCloser.close(conn, ps);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
-            return ok;
-
         }
+        return ok;
+
     }
 
-    @Override
-    public boolean deleteProduct(int p_id) {
-        return false;
-    }
 
     @Override
     public Product findOne(int p_id) {

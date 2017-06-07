@@ -13,7 +13,7 @@
                 <div class="row form-group">
                     <div class="col-md-6">
                         <input type="text" name="name" class="form-control" placeholder="name">
-                        //html version
+                        <%--html version--%>
                         <select name="category">
                             <c:forEach items="${category}" var="category" >
                                 <option value="${category.c_id}">${category.name}</option>
@@ -21,7 +21,7 @@
                             </c:forEach>
 
                         </select>
-                        //bootstrap version
+                        <%--bootstrap version --%>
                         <button class="btn btn-primary dropdown-toggle" id="category" type="button" data-toggle="dropdown">Category
                             <span class="caret"></span></button>
                         <div>
@@ -34,7 +34,7 @@
                             <%--<li><a href="#">디저트</a></li>--%>
 </c:forEach>
 
-                            //get selecteditem from dropdown list
+                             <%--javascript version: get selecteditem from dropdown list--%>
                             <%
                             String selectedItem;
                             selectedItem = request.getParameter("category");
@@ -46,8 +46,7 @@
                             }
                             %>
 
-                            //javascript version
-                            //get selected item from dropdown list
+                            <%--javascript version--%>
 
                             <script>
                                 var text;
@@ -84,20 +83,15 @@
                         <%
                             request.setCharacterEncoding("UTF-8");
 
-                            // 10Mbyte 제한
                             int maxSize  = 1024*1024*10;
 
-                            // 웹서버 컨테이너 경로
                             String root = request.getSession().getServletContext().getRealPath("/");
 
-                            // 파일 저장 경로(ex : /home/tour/web/ROOT/upload)
                             String savePath = "./images/upload";
                                     //root + "upload";
 
-                            // 업로드 파일명
                             String uploadFile = "";
 
-                            // 실제 저장할 파일명
                             String newFileName = "";
 
                             int read = 0;
@@ -110,30 +104,22 @@
 
                                 MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
 
-                                // 전송받은 parameter의 한글깨짐 방지
+                              
                                 String title = multi.getParameter("title");
                                 title = new String(title.getBytes("8859_1"), "UTF-8");
 
-                                // 파일업로드
                                 uploadFile = multi.getFilesystemName("uploadFile");
 
-                                // 실제 저장할 파일명(ex : 20140819151221.zip)
+                              
                                 newFileName = simDf.format(new Date(currentTime)) +"."+ uploadFile.substring(uploadFile.lastIndexOf(".")+1);
-
-
-                                // 업로드된 파일 객체 생성
+                               
                                 File oldFile = new File(savePath + uploadFile);
-
-
-                                // 실제 저장될 파일 객체 생성
+                          
                                 File newFile = new File(savePath + newFileName);
-
-
-                                // 파일명 rename
+                             
                                 if(!oldFile.renameTo(newFile)){
 
-                                    // rename이 되지 않을경우 강제로 파일을 복사하고 기존파일은 삭제
-
+                                  
                                     buf = new byte[1024];
                                     fin = new FileInputStream(oldFile);
                                     fout = new FileOutputStream(newFile);
