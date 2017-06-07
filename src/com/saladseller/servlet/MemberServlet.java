@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.saladseller.model.Member;
 import com.saladseller.service.MemberService;
 
+@WebServlet(name="memberServlet", urlPatterns = "*.do")
 public class MemberServlet extends HttpServlet {
 
 	MemberService memberService;
@@ -65,7 +66,7 @@ public class MemberServlet extends HttpServlet {
 
 			} else {
 				req.setAttribute("msg", "로그인 실패ㅜㅜ");
-s				// 로그인 실패!!
+				// 로그인 실패!!
 			}
 
 			req.getRequestDispatcher("loginResult.jsp").forward(req, resp);

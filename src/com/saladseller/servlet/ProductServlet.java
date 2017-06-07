@@ -1,9 +1,11 @@
 package com.saladseller.servlet;
 
+import com.saladseller.dao.CategoryDaoImpl;
 import com.saladseller.dao.ProductDaoImpl;
 import com.saladseller.model.Product;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,13 +14,15 @@ import java.util.List;
 
 /**
  * Created by nmsohn on 2017-06-05.
- */
+ */@WebServlet(name = "productServlet", urlPatterns = "/product")
 public class ProductServlet extends HttpServlet {
     ProductDaoImpl productDao;
+    CategoryDaoImpl categoryDao;
 
     public ProductServlet() {
 
         productDao = productDao.getInstance();
+        categoryDao = categoryDao.getInstance();
     }
 
     @Override
@@ -48,6 +52,7 @@ public class ProductServlet extends HttpServlet {
                 req.setAttribute("findByCategory", list);
             }
         }else if (reqURI.equals(contextPath + "/addForm.do")) {
+        
             String name = req.getParameter("name");
             String cat = req.getParameter("category");
             Double price = Double.parseDouble(req.getParameter("price"));

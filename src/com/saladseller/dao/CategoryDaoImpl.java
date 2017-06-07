@@ -13,6 +13,17 @@ import java.util.List;
  * Created by 5CLASS-184 on 2017-05-31.
  */
 public class CategoryDaoImpl implements CategoryDao{
+	 private static CategoryDaoImpl instance = new CategoryDaoImpl();
+
+	    private CategoryDaoImpl() {
+	    }
+
+	    public static CategoryDaoImpl getInstance() {
+	        if (instance != null) {
+	            instance = new CategoryDaoImpl();
+	        }
+	        return instance;
+	    }
     @Override
     public boolean addCategory(Category c) throws SQLException, ClassNotFoundException{
         Connection conn = null;

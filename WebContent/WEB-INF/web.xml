@@ -7,7 +7,8 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
-  <!-- 우리가 만든 서블릿을 등록 -->
+  
+<!-- 
   <servlet>
     <servlet-name>memberServlet</servlet-name>
     <servlet-class>com.saladseller.servlet.MemberServlet</servlet-class>
@@ -21,14 +22,12 @@
         <servlet-class>com.saladseller.servlet.ProductServlet</servlet-class>
     </servlet>
   
-  <!-- 등록한 서블릿이처리할 url을 명시 
-  	~~~~~~~~.do로 끝나는 요청이 있으면 memberServlet이 
-  	처리하겠다
-  -->
+
+ 
   <servlet-mapping>
   	<servlet-name>memberServlet</servlet-name>
   	<url-pattern>*.do</url-pattern>
-  </servlet-mapping>
+   </servlet-mapping>
     <servlet-mapping>
   	<servlet-name>commentServlet</servlet-name>
   	<url-pattern>*.do</url-pattern>
@@ -37,14 +36,29 @@
 
     <servlet-mapping>
         <servlet-name>productServlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
     
-    <jsp-config> 
+      <servlet>
+    <description></description>
+    <display-name>ImageServlet</display-name>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>com.saladseller.servlet.ImageServlet</servlet-class>
+    <init-param>
+      <param-name>uploadPath</param-name>
+      <param-value>C:\\Users\\5CLASS-184\\Dropbox\\workspace\\test3\\WebContent\\images\\</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/ImageServlet</url-pattern>
+  </servlet-mapping>
+ -->
+   <jsp-config> 
         <taglib> 
                <taglib-uri>customTags</taglib-uri> 
-               <taglib-location>/WEB-INF/tld/CustomTags.tld</taglib-location> 
+               <taglib-location>/WEB-INF/CustomTags.tld</taglib-location> 
         </taglib> 
 </jsp-config>
-    
+
 </web-app>

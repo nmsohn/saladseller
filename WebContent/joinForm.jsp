@@ -1,4 +1,5 @@
-<!DOCTYPE HTML>
+<%@ include file="/layout/header.jsp" %>
+<!-- <!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -12,7 +13,7 @@
 	content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 <meta name="author" content="gettemplates.co" />
 
-<!-- 
+
 	//////////////////////////////////////////////////////
 
 	FREE HTML5 TEMPLATE 
@@ -24,9 +25,9 @@
 	Facebook: 		https://www.facebook.com/fh5co
 
 	//////////////////////////////////////////////////////
-	 -->
+	
 
-<!-- Facebook and Twitter integration -->
+Facebook and Twitter integration
 <meta property="og:title" content="" />
 <meta property="og:image" content="" />
 <meta property="og:url" content="" />
@@ -37,33 +38,33 @@
 <meta name="twitter:url" content="" />
 <meta name="twitter:card" content="" />
 
-<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
-<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">
 
-<!-- Animate.css -->
+Animate.css
 <link rel="stylesheet" href="css/animate.css">
-<!-- Icomoon Icon Fonts-->
+Icomoon Icon Fonts
 <link rel="stylesheet" href="css/icomoon.css">
-<!-- Bootstrap  -->
+Bootstrap 
 <link rel="stylesheet" href="css/bootstrap.css">
 
-<!-- Flexslider  -->
+Flexslider 
 <link rel="stylesheet" href="css/flexslider.css">
 
 
-<!-- Owl Carousel  -->
+Owl Carousel 
 <link rel="stylesheet" href="css/owl.carousel.min.css">
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-<!-- Theme style  -->
+Theme style 
 <link rel="stylesheet" href="css/style.css">
 
-<!-- Modernizr JS -->
+Modernizr JS
 <script src="js/modernizr-2.6.2.min.js"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
+FOR IE9 below
+[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
-	<![endif]-->
+	<![endif]
 
 </head>
 <body>
@@ -115,7 +116,7 @@
 				</div>
 
 			</div>
-		</nav>
+		</nav> -->
 
 
 		<div id="fh5co-contact">
@@ -143,9 +144,9 @@
 			</div>
 		</div>
 
+<%@ include file="/layout/footer.jsp" %>
 
-
-		<div id="fh5co-started">
+		<!-- <div id="fh5co-started">
 			<div class="container">
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -171,9 +172,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-		<footer id="fh5co-footer" role="contentinfo">
+	<!-- 	<footer id="fh5co-footer" role="contentinfo">
 			<div class="container">
 				<div class="row row-pb-md">
 					<div class="col-md-4 fh5co-widget">
@@ -241,28 +242,28 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 
-	<!-- jQuery -->
+	jQuery
 	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
+	jQuery Easing
 	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
+	Bootstrap
 	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
+	Waypoints
 	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
+	Carousel
 	<script src="js/owl.carousel.min.js"></script>
-	<!-- countTo -->
+	countTo
 	<script src="js/jquery.countTo.js"></script>
-	<!-- Flexslider -->
+	Flexslider
 	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Google Map -->
+	Google Map
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
 	<script src="js/google_map.js"></script>
 
-	<!-- Main -->
+	Main
 	<script src="js/main.js"></script>
 
 </body>
-</html>
+</html> -->
 
