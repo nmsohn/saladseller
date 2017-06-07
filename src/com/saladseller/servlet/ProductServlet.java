@@ -36,15 +36,31 @@ public class ProductServlet extends HttpServlet {
         //set category path
 
         String category= req.getParameter("category");
-        String contextPath = req.getContextPath();
-        String reqURI = req.getRequestURI() +category;
+//        String contextPath = req.getContextPath();
+//        String reqURI = req.getRequestURI() +category;
 
-        if (contextPath.equals("/"+category)) {
+        String contextPath = req.getContextPath();
+        String reqURI = req.getRequestURI();
+
+        if (reqURI.equals(contextPath + "/"+category)) {
             if (category != null) {
                 List<Product> list = productDao.findByCategory(category);
                 req.setAttribute("findByCategory", list);
             }
+        }else if (reqURI.equals(contextPath + "/addForm.do")) {
+            String name = req.getParameter("name");
+            String cat = req.getParameter("category");
+            Double price = Double.parseDouble(req.getParameter("price"));
+            String description = req.getParameter("description");
+            int quantity = Integer.parseInt(req.getParameter("quantity"));
+            String imgPath = req.getParameter("imagePath");
+            Product p = new Product(name,cat,description,price,quantity,imgPath);
+            boolean result = productDao.insertProduct(p);
+
+            req.setAttribute("result", result);
+
         }
+
         getServletContext().setAttribute("category", category);
         req.getRequestDispatcher(reqURI).forward(req, resp);
     }

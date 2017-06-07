@@ -6,11 +6,29 @@ public class Product {
 	private String p_name;
 	private String category;
 	private String description;
-	private int price;
+	private double price;
 	private int quantity;
 	private String imgPath;
-	
-	
+
+	public Product(String p_name, String category, String description, double price, int quantity, String imgPath) {
+		this.p_name = p_name;
+		this.category = category;
+		this.description = description;
+		this.price = price;
+		this.quantity = quantity;
+		this.imgPath = imgPath;
+	}
+
+	public Product(int p_id, String p_name, String category, String description, int price, int quantity, String imgPath) {
+		this.p_id = p_id;
+		this.p_name = p_name;
+		this.category = category;
+		this.description = description;
+		this.price = price;
+		this.quantity = quantity;
+		this.imgPath = imgPath;
+	}
+
 	public int getP_id() {
 		return p_id;
 	}
@@ -43,11 +61,11 @@ public class Product {
 		this.description = description;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

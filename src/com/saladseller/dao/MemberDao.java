@@ -15,9 +15,9 @@ public class MemberDao {
 	private static MemberDao instance;
 
 	private Connection connection;
-	private static String URL = "jdbc:mysql://localhost:3306/shopdb";
+	private static String URL = "jdbc:mysql://localhost:3306/saladseller";
 	private static String USERNAME = "root";
-	private static String PASSWORD = "wldus1004#";
+	private static String PASSWORD = "elephantroom";
 
 	public static MemberDao getInstance() {
 		if (instance == null) {
@@ -37,6 +37,7 @@ public class MemberDao {
 
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로딩실패");
+			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

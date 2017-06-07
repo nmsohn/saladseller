@@ -15,9 +15,9 @@ public class CommentDao {
 	private static CommentDao instance;
 
 	private Connection connection;
-	private static String URL = "jdbc:mysql://localhost:3306/shopdb";
+	private static String URL = "jdbc:mysql://localhost:3306/saladseller";
 	private static String USERNAME = "root";
-	private static String PASSWORD = "wldus1004#";
+	private static String PASSWORD = "elephantroom";
 
 	public static CommentDao getInstance() {
 		if (instance == null) {
@@ -30,23 +30,23 @@ public class CommentDao {
 		// 드라이버 로딩
 		// 디비연결
 		// 연결획득
-
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-
-		} catch (ClassNotFoundException e) {
-			System.out.println("드라이버 로딩실패");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Class.forName("com.mysql.jdbc.Driver");
+//			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+//
+//		} catch (ClassNotFoundException e) {
+//			System.out.println("드라이버 로딩실패");
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 	}
 
-	public void insertComment(Comment comment) {
+	public void insertComment(Comment comment) throws Exception{
 		// 댓글 정보 삽입
-
+		connection = ConnectionProvider.getConnection();
 		String sql = "insert into comment (name, pass, content) values(?,?,?)";
 		PreparedStatement pstmt = null;
 
@@ -73,8 +73,9 @@ public class CommentDao {
 			}
 		}
 	}
-	
-	public List<Comment> selectAll() {
+
+	public List<Comment> selectAll()  throws Exception{
+		connection = ConnectionProvider.getConnection();
 		String sql = "select * from comment";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

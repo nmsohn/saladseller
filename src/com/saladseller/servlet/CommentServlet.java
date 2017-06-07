@@ -52,20 +52,29 @@ public class CommentServlet extends HttpServlet {
 			comment.setName(name);
 			comment.setPass(pass);
 			comment.setContent(content);
-			
-			commentDao.insertComment(comment);
+			try{
+				commentDao.insertComment(comment);
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+
 			
 		} else if (reqURI.equals(contextPath + "/commentlist.do")) {
 			// 모든 회원정보를 조회
-			
-			List<Comment> commentList = commentDao.selectAll(); 
-			String url = "/jsp/single.jsp";
-			
-			
-			req.setAttribute("commentList", commentList);
-			
-			req.getRequestDispatcher(url)
-			.forward(req, resp);
+			try{
+				List<Comment> commentList = commentDao.selectAll();
+				String url = "/jsp/single.jsp";
+
+
+				req.setAttribute("commentList", commentList);
+
+				req.getRequestDispatcher(url)
+						.forward(req, resp);
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+
+
 			
 
 

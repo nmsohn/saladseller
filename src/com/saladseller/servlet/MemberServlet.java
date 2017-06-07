@@ -65,7 +65,7 @@ public class MemberServlet extends HttpServlet {
 
 			} else {
 				req.setAttribute("msg", "로그인 실패ㅜㅜ");
-				// 로그인 실패!!
+s				// 로그인 실패!!
 			}
 
 			req.getRequestDispatcher("loginResult.jsp").forward(req, resp);
