@@ -1,11 +1,10 @@
 # saladseller
+![logo](/WebContent/images/logo_small.png)
 ![SaladSeller](/WebContent/images/ppt.jpg)
 
 
 A shopping website based on the JSP Model 2 architecture
 This project is currently working in progress.
-
-![logo](/WebContent/images/logo_small.png)
 
 [To-do]
 1. cart
