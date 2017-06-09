@@ -10,4 +10,4 @@ This project is currently working in progress.
 3. comment
 4. order list
 
-![SaladSeller](https://www.dropbox.com/s/o16n0ujs2vi8s7q/astoriaCoffee.jpg?dl=0)
+![SaladSeller](/WebContent/images/ppt.jpg)
