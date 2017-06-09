@@ -2,8 +2,12 @@
 ![logo](/WebContent/images/logo_small.png)
 
 A shopping website based on the JSP Model 2 architecture
+This project is currently working in progress.
 
-참고하기
-1. merge 전에 코드확인하기
-2. 커밋할 때 message 알아보기 쉽게 적어주기
-3. 되도록 branch 만들어서 pull request 보내기
+[To-do]
+1. cart
+2. image upload
+3. comment
+4. order list
+
+![SaladSeller](https://www.dropbox.com/s/o16n0ujs2vi8s7q/astoriaCoffee.jpg?dl=0)
