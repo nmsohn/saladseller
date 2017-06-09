@@ -1,6 +1,6 @@
 # saladseller
 ![SaladSeller](/WebContent/images/ppt.jpg)
-![logo](/WebContent/images/logo_small.png)
+
 
 A shopping website based on the JSP Model 2 architecture
 This project is currently working in progress.
@@ -11,4 +11,4 @@ This project is currently working in progress.
 3. comment
 4. order list
 
-
+![logo](/WebContent/images/logo_small.png)
